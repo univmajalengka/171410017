@@ -32,7 +32,6 @@ include("koneksi.php");
         <td><?php echo"$r[jenis_kegiatan]";?></td>
         <td align="center">
             <a href="?halaman=isi_detail&id=<?php echo"$r[id_isi]";?>" title="Detail Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-            <a href="?halaman=isi_edit&id=<?php echo"$r[id_isi]";?>" title="Edit Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
             <a href="?halaman=isi_delete&id=<?php echo"$r[id_isi]";?>" title="Hapus Data" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
             
     </tr>
