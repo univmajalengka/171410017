@@ -1,5 +1,8 @@
 <?php 
+//Memulai Sesi
 session_start();
+
+//memanggil file koneksi
 include "admin/koneksi.php";
 
 $username = ($_POST['nidn']);
