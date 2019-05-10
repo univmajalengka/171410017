@@ -1,6 +1,7 @@
 <?php
 include("koneksi.php");
 ?>
+
 <h3 align="center">Data Isi BKD</h3>
 <a href="?halaman=isi_tambah" class="btn btn-primary btn-sm">Tambah Data</a><br /><br /> 
 <div class="table-responsive">
