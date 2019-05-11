@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
 <body>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
 				<li class="active"><a href="?halaman=default">Home</a></li>

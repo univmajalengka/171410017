@@ -1,7 +1,7 @@
 <?php
 $halaman=(isset($_GET['halaman'])) ?$_GET['halaman']:"default";
 switch($halaman){
-	case'relasi_fakultas':include"view_rel_fak.php";break;
+	case'relasi_fakultas':include"relfak_tambah.php";break;
 	case'relfak_detail':include"relfak_detail.php";break;
 	case'relfak_edit':include"relfak_edit.php";break;
 	case'relfak_tambah':include"relfak_tambah.php";break;
