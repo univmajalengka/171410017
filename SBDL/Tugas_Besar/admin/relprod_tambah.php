@@ -39,4 +39,7 @@
         </div>
     </div>
 </form>
+<hr>
+<br>
+<?php include 'view_relprod.php' ?>
     

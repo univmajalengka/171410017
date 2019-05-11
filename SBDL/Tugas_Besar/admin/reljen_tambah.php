@@ -3,15 +3,14 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">ID Jenis Dosen : </label>
         <div class="col-sm-4">
-        <input type="text" name="id_jenis" class="form-control" placeholder="ID Jenis Dosen" required>
+        <input type="text" name="id_jenis" class="form-control" placeholder="ID Jenis" required>
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-3 control-label">Nama Jenis Dosen : </label>
+        <label class="col-sm-3 control-label">Nama Jenis : </label>
         <div class="col-sm-4">
-        <input type="text" name="nama_jenis" class="form-control" placeholder="Nama Jenis Dosen" required>
+        <input type="text" name="nama_jenis" class="form-control" placeholder="Nama Jenis" required>
         </div>
-    </div>  
     </div>  
     <div class="form-group">
         <label class="col-sm-3 control-label">&nbsp;</label>
@@ -21,4 +20,7 @@
         </div>
     </div>
 </form>
-    
+<hr>
+<br>
+<?php 
+include 'view_reljen.php' ?>

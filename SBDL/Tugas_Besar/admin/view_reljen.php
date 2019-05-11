@@ -2,7 +2,6 @@
 include("koneksi.php");
 ?>
 <h3 align="center">Data Relasi Jenis Dosen</h3>
-<a href="?halaman=reljen_tambah" class="btn btn-primary btn-sm">Tambah Data</a><br /><br /> 
 <div class="table-responsive">
 <table class="table table-bordered table-hover">
     <tr>

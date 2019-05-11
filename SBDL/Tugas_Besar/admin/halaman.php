@@ -4,52 +4,46 @@ switch($halaman){
 	case'relasi_fakultas':include"relfak_tambah.php";break;
 	case'relfak_detail':include"relfak_detail.php";break;
 	case'relfak_edit':include"relfak_edit.php";break;
-	case'relfak_tambah':include"relfak_tambah.php";break;
 	case'relfak_ad':include"relfak_save.php";break;
 	case'relfak_up':include"relfak_update.php";break;
 	case'relfak_delete':include"relfak_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'relasi_prodi':include"view_relprod.php";break;
+	case'relasi_prodi':include"relprod_tambah.php";break;
 	case'relprod_detail':include"relprod_detail.php";break;
 	case'relprod_edit':include"relprod_edit.php";break;
-	case'relprod_tambah':include"relprod_tambah.php";break;
 	case'relprod_ad':include"relprod_save.php";break;
 	case'relprod_up':include"relprod_update.php";break;
 	case'relprod_delete':include"relprod_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'relasi_jabatan':include"view_reljab.php";break;
+	case'relasi_jabatan':include"reljab_tambah.php";break;
 	case'reljab_detail':include"reljab_detail.php";break;
 	case'reljab_edit':include"reljab_edit.php";break;
-	case'reljab_tambah':include"reljab_tambah.php";break;
 	case'reljab_ad':include"reljab_save.php";break;
 	case'reljab_up':include"reljab_update.php";break;
 	case'reljab_delete':include"reljab_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'relasi_jabfung':include"view_reljabfung.php";break;
+	case'relasi_jabfung':include"reljabfung_tambah.php";break;
 	case'reljabfung_detail':include"reljabfung_detail.php";break;
 	case'reljabfung_edit':include"reljabfung_edit.php";break;
-	case'reljabfung_tambah':include"reljabfung_tambah.php";break;
 	case'reljabfung_ad':include"reljabfung_save.php";break;
 	case'reljabfung_up':include"reljabfung_update.php";break;
 	case'reljabfung_delete':include"reljabfung_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'relasi_golongan':include"view_relgol.php";break;
+	case'relasi_golongan':include"relgol_tambah.php";break;
 	case'relgol_detail':include"relgol_detail.php";break;
 	case'relgol_edit':include"relgol_edit.php";break;
-	case'relgol_tambah':include"relgol_tambah.php";break;
 	case'relgol_ad':include"relgol_save.php";break;
 	case'relgol_up':include"relgol_update.php";break;
 	case'relgol_delete':include"relgol_delete.php";break;
 	case'default':include"home.php";break;	
 
-	case'relasi_jendos':include"view_reljen.php";break;
+	case'relasi_jendos':include"reljen_tambah.php";break;
 	case'reljen_detail':include"reljen_detail.php";break;
 	case'reljen_edit':include"reljen_edit.php";break;
-	case'reljen_tambah':include"reljen_tambah.php";break;
 	case'reljen_ad':include"reljen_save.php";break;
 	case'reljen_up':include"reljen_update.php";break;
 	case'reljen_delete':include"reljen_delete.php";break;

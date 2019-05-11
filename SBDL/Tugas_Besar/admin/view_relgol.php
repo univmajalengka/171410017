@@ -2,7 +2,6 @@
 include("koneksi.php");
 ?>
 <h3 align="center">Data Relasi Golongan</h3>
-<a href="?halaman=relgol_tambah" class="btn btn-primary btn-sm">Tambah Data</a><br /><br /> 
 <div class="table-responsive">
 <table class="table table-bordered table-hover">
     <tr>

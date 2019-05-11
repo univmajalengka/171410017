@@ -1,4 +1,4 @@
-<h3 align="center">Tambah Relasi JabFung</h3>
+<h3 align="center">Tambah Relasi Jabatan Fungsional</h3>
 <form class="form-horizontal" method="post" action="?halaman=reljabfung_ad" enctype="multipart/form-data">
     <div class="form-group">
         <label class="col-sm-3 control-label">ID JabFung : </label>
@@ -12,7 +12,6 @@
         <input type="text" name="nama_jabfung" class="form-control" placeholder="Nama JabFung" required>
         </div>
     </div>  
-    </div>  
     <div class="form-group">
         <label class="col-sm-3 control-label">&nbsp;</label>
         <div class="col-sm-6">
@@ -21,4 +20,7 @@
         </div>
     </div>
 </form>
-    
+<hr>
+<br>
+<?php 
+include 'view_reljabfung.php' ?>

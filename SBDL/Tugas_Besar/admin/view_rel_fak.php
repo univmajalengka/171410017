@@ -2,7 +2,7 @@
 include("koneksi.php");
 ?>
 <h3 align="center">Data Relasi Fakultas</h3>
-<a href="?halaman=relfak_tambah" class="btn btn-primary btn-sm">Tambah Data</a><br /><br /> 
+<br> 
 <div class="table-responsive">
 <table class="table table-bordered table-hover">
     <tr>

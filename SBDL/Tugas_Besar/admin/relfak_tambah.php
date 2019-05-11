@@ -27,6 +27,7 @@
     </div>
 </form>
 <hr>
+<br>
 <?php 
 include 'view_rel_fak.php' ?>
     

@@ -12,7 +12,6 @@
         <input type="text" name="nama_gol" class="form-control" placeholder="Nama Golongan" required>
         </div>
     </div>  
-    </div>  
     <div class="form-group">
         <label class="col-sm-3 control-label">&nbsp;</label>
         <div class="col-sm-6">
@@ -21,4 +20,7 @@
         </div>
     </div>
 </form>
-    
+<hr>
+<br>
+<?php 
+include 'view_relgol.php' ?>
