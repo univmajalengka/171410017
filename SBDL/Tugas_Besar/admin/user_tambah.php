@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 <h3 align="center">Tambah User</h3>
 <form class="form-horizontal" method="post" action="?halaman=user_ad" enctype="multipart/form-data">
 
@@ -70,4 +76,7 @@
         </div>
     </div>
 </form>
+</body>
+</html>
+
     
