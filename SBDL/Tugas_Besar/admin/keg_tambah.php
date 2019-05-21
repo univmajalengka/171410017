@@ -26,4 +26,5 @@
         </div>
     </div>
 </form>
+<?php include 'view_keg.php' ?>
     

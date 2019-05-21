@@ -22,9 +22,9 @@ include("koneksi.php");
         <td><?php echo"$r[id_jabatan]";?></td>
         <td><?php echo"$r[nama_jabatan]";?></td>
         <td align="center">
-            <a href="?halaman=reljab_detail&id=<?php echo"$r[id_jabatan]";?>" title="Detail Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-            <a href="?halaman=reljab_edit&id=<?php echo"$r[id_jabatan]";?>" title="Edit Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-            <a href="?halaman=reljab_delete&id=<?php echo"$r[id_jabatan]";?>" title="Hapus Data" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+            <a href="?halaman=reljab_detail&id=<?php echo"$r[id_jabatan]";?>" title="Detail Data" class="btn btn-primary btn-sm">Detail</a>
+            <a href="?halaman=reljab_edit&id=<?php echo"$r[id_jabatan]";?>" title="Edit Data" class="btn btn-primary btn-sm">Edit</a>
+            <a href="?halaman=reljab_delete&id=<?php echo"$r[id_jabatan]";?>" title="Hapus Data" class="btn btn-danger btn-sm">Delete</a>
             
     </tr>
 <?php 

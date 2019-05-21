@@ -24,9 +24,9 @@ include("koneksi.php");
         <td><?php echo"$r[id_fakultas]";?></td>
         <td><?php echo"$r[nama_prodi]";?></td>
         <td align="center">
-            <a href="?halaman=relprod_detail&id=<?php echo"$r[id_prodi]";?>" title="Detail Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-            <a href="?halaman=relprod_edit&id=<?php echo"$r[id_prodi]";?>" title="Edit Data" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-            <a href="?halaman=relprod_delete&id=<?php echo"$r[id_prodi]";?>" title="Hapus Data" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+            <a href="?halaman=relprod_detail&id=<?php echo"$r[id_prodi]";?>" class="btn btn-primary btn-sm">Detail</a>
+            <a href="?halaman=relprod_edit&id=<?php echo"$r[id_prodi]";?>" title="Edit Data" class="btn btn-primary btn-sm">Edit</a>
+            <a href="?halaman=relprod_delete&id=<?php echo"$r[id_prodi]";?>" title="Hapus Data" class="btn btn-danger btn-sm">Delete</a>
             
     </tr>
 <?php 

@@ -1,3 +1,5 @@
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
 <h3 align="center">Tambah Relasi Fakultas</h3>
 <form class="form-horizontal" method="post" action="?halaman=relfak_ad" enctype="multipart/form-data">
     <div class="form-group">
@@ -23,6 +25,7 @@
         <div class="col-sm-6">
         <input type="submit" name="tambah_relfak" class="btn btn-sm btn-primary" value="Simpan">
         <a href="?halaman=relasi_fakultas" class="btn btn-sm btn-danger">Batal</a>
+        
         </div>
     </div>
 </form>

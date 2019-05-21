@@ -85,10 +85,9 @@ switch($halaman){
 	case'isi_delete':include"isi_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'kegiatan':include"view_keg.php";break;
+	case'kegiatan':include"keg_tambah.php";break;
 	case'keg_detail':include"keg_detail.php";break;
 	case'keg_edit':include"keg_edit.php";break;
-	case'keg_tambah':include"keg_tambah.php";break;
 	case'keg_ad':include"keg_save.php";break;
 	case'keg_up':include"keg_update.php";break;
 	case'keg_delete':include"keg_delete.php";break;
