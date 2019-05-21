@@ -1,6 +1,5 @@
 <h3 align="center">Tambah User</h3>
 <form class="form-horizontal" method="post" action="?halaman=user_ad" enctype="multipart/form-data">
-
         <?php 
   include 'koneksi.php';
 
@@ -12,13 +11,14 @@
     <label class="col-sm-3 control-label" >NIDN :</label>
     <div class="col-sm-4">   
   <select class="form-control" name="nidn">
-     <?php while($data = mysqli_fetch_asssoc($result) ){?>
+     <?php while($data = mysqli_fetch_array($result) ){?>
 <option><?php echo $data['nidn'] ?></option>
 <?php } ?>
   </select>
     </div>
 
-</div> 
+</div>
+ 
     <div class="form-group">
         <label class="col-sm-3 control-label">Password : </label>
         <div class="col-sm-4">
@@ -65,10 +65,12 @@
     <div class="form-group">
         <label class="col-sm-3 control-label">&nbsp;</label>
         <div class="col-sm-6">
-        <input type="submit" name="tambah_setting" class="btn btn-sm btn-primary" value="Simpan">
-        <a href="?halaman=setting" class="btn btn-sm btn-danger">Batal</a>
+        <input type="submit" name="tambah_relprod" class="btn btn-sm btn-primary" value="Simpan">
+        <a href="?halaman=relasi_prodi" class="btn btn-sm btn-danger">Batal</a>
         </div>
     </div>
 </form>
-
+<hr>
+<br>
+<?php include 'view_user.php' ?>
     

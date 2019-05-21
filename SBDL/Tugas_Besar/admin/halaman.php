@@ -49,7 +49,7 @@ switch($halaman){
 	case'reljen_delete':include"reljen_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'dosen':include"view_dosen.php";break;
+	case'dosen':include"dosen_tambah.php";break;
 	case'dosen_detail':include"dosen_detail.php";break;
 	case'dosen_edit':include"dosen_edit.php";break;
 	case'dosen_tambah':include"dosen_tambah.php";break;
@@ -58,28 +58,25 @@ switch($halaman){
 	case'dosen_delete':include"dosen_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'setting':include"view_setting.php";break;
+	case'setting':include"set_tambah.php";break;
 	case'set_detail':include"set_detail.php";break;
 	case'set_edit':include"set_edit.php";break;
-	case'set_tambah':include"set_tambah.php";break;
 	case'set_ad':include"set_save.php";break;
 	case'set_up':include"set_update.php";break;
 	case'set_delete':include"set_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'user':include"view_user.php";break;
+	case'user':include"user_in.php";break;
 	case'user_detail':include"user_detail.php";break;
 	case'user_edit':include"user_edit.php";break;
-	case'user_tambah':include"user_tambah.php";break;
 	case'user_ad':include"user_save.php";break;
 	case'user_up':include"user_update.php";break;
 	case'user_delete':include"user_delete.php";break;
 	case'default':include"home.php";break;
 
-	case'isi_bkd':include"view_isibkd.php";break;
+	case'isi_bkd':include"isi_tambah.php";break;
 	case'isi_detail':include"isi_detail.php";break;
 	case'isi_edit':include"isi_edit.php";break;
-	case'isi_tambah':include"isi_tambah.php";break;
 	case'isi_ad':include"isi_save.php";break;
 	case'isi_up':include"isi_update.php";break;
 	case'isi_delete':include"isi_delete.php";break;
