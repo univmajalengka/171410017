@@ -1,2 +1,5 @@
 # Mata Kuliah SBDL  
-Tugas Besar
+''' 
+1. Tugas Besar
+2. Tugas Pertemuan ke-10
+'''
