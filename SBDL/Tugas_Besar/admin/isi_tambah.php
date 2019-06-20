@@ -130,3 +130,5 @@
   </form>
 </body>
 </html>
+<br>
+<?php include "view_isibkd.php" ?>

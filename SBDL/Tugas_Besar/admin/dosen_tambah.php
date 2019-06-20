@@ -207,3 +207,4 @@
         </div>
     </div>
 </form>
+<?php include "view_dosen.php" ?>

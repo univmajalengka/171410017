@@ -18,7 +18,7 @@ include("koneksi.php");
     </tr>
 <?php
     $no=1;
-    $query=("SELECT * FROM isi_bkd");
+    $query=("SELECT * FROM view_isi");
     $lihat = mysqli_query($koneksi, $query) or die('Error, query failed. ' . mysqli_error());
     $jml_data=mysqli_num_rows($lihat);
     while($r=mysqli_fetch_array($lihat)){

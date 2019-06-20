@@ -51,4 +51,6 @@
         </div>
     </div>
 </form>
+<br>
+<?php include "view_setting.php" ?>
     

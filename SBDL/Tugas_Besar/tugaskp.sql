@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2019 pada 10.46
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Generation Time: Jun 20, 2019 at 02:16 PM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -52,7 +52,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nip`, `nidn`, `nosertifikat`, `nama_dosen`, `id_prodi`, `tlp`, `email`, `jk`, `id_fakultas`, `id_jabfung`, `id_gol`, `tanggal_lahir`, `tempat_lahir`, `s1`, `s2`, `s3`, `id_jenis`, `id_jabatan`, `bidangilmu`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `dosen` (`id_dosen`, `nip`, `nidn`, `nosertifikat`, `nama_dosen`, `i
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `isi_bkd`
+-- Table structure for table `isi_bkd`
 --
 
 CREATE TABLE `isi_bkd` (
@@ -90,16 +90,17 @@ CREATE TABLE `isi_bkd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `isi_bkd`
+-- Dumping data for table `isi_bkd`
 --
 
 INSERT INTO `isi_bkd` (`id_isi`, `kode_kegiatan`, `nidn`, `semester`, `tahun_akademik`, `jenis_kegiatan`, `deskripsi_kegiatan`, `bukti_penugasan`, `sks`, `jml_mhs`, `jml_dosen`, `masa_penugasan`, `bukti_dokumen`, `sks_kinerja`, `rekomendasi`, `file_bukti_penugasan`, `file_bukti_dokumen`) VALUES
-(75, 3, '0423107903', 'gasal', '2018/2019', 0, 'Mengadakan seminar untuk mahasiswa', 'SK', 12, '90', 20, '2 hari', 'dokumen gambar', 20, '-', 'penugasan - 17628 [Converted].png', 'dokumen - logo.png');
+(75, 3, '0423107903', 'gasal', '2018/2019', 0, 'Mengadakan seminar untuk mahasiswa', 'SK', 12, '90', 20, '2 hari', 'dokumen gambar', 20, '-', 'penugasan - 17628 [Converted].png', 'dokumen - logo.png'),
+(76, 1, '0415028704', '-', '-', 0, '-', '-', 0, '-', 0, '-', '-', 0, '-', 'penugasan - jame-mosque-aerial-view-sunset-yazd-iran.jpg', 'dokumen - Capture8.PNG');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kegiatan`
+-- Table structure for table `kegiatan`
 --
 
 CREATE TABLE `kegiatan` (
@@ -109,7 +110,7 @@ CREATE TABLE `kegiatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kegiatan`
+-- Dumping data for table `kegiatan`
 --
 
 INSERT INTO `kegiatan` (`id_kegiatan`, `kode_kegiatan`, `nama_kegiatan`) VALUES
@@ -146,17 +147,24 @@ INSERT INTO `kegiatan` (`id_kegiatan`, `kode_kegiatan`, `nama_kegiatan`) VALUES
 ('KEG_PENUNJANG', 31, 'Menjadi Anggota Organisasi Profesi (dihitung Setiap Periode Kegiatan)'),
 ('KEG_PENUNJANG', 32, 'Menjadi Anggota Delegasi Nasional Ke Pertemuan Internasional'),
 ('KEG_PENUNJANG', 33, 'Berperan Serta Aktif Dalam Pertemuan Ilmiah'),
-('KEG_PENUNJANG', 34, 'Mendapat Tanda Jasa/penghargaan'),
-('KEG_PENUNJANG', 35, 'Menulis Buku Pelajaran SMA/SMK/MA, SMP/MTS, SD/MI Yang Diterbitkan Dan Diedarkan Secara Nasional'),
-('KEG_PENUNJANG', 36, 'Mempunyai Prestasi Di Bidang Olahraga/humaniora'),
-('KEG_PENUNJANG', 37, 'Keanggotaan Dalam Organisasi Profesi Dosen'),
-('KEG_PENUNJANG', 38, 'Keanggotaan Dalam Tim Penilai Jabatan Akademik Dosen'),
-('KEG_PENUNJANG', 39, 'Sebagai Asesor Beban Kerja Dosen Dan Evaluasi Pelaksanaan Tridharma Perguruan Tinggi');
+('KEG_PENUNJANG', 34, 'Mendapat Tanda Jasa/penghargaan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_fakultas`
+-- Stand-in structure for view `prodi`
+-- (See below for the actual view)
+--
+CREATE TABLE `prodi` (
+`id_prodi` int(11)
+,`id_fakultas` int(11)
+,`nama_prodi` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `relasi_fakultas`
 --
 
 CREATE TABLE `relasi_fakultas` (
@@ -166,24 +174,23 @@ CREATE TABLE `relasi_fakultas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_fakultas`
+-- Dumping data for table `relasi_fakultas`
 --
 
 INSERT INTO `relasi_fakultas` (`id_fakultas`, `nama_fakultas`, `kepanjangan`) VALUES
 (1, 'FISIP', 'Fakultas Ilmu Sosial dan Ilmu Politik'),
 (2, 'FKIP', 'Fakultas Keguruan dan Ilmu Pendidikan'),
-(3, 'FEB', 'Fakultas Ekonomika dan Bisnis'),
+(3, 'FE', 'Fakultas Ekonomika'),
 (4, 'FAPERTA', 'Fakultas Pertanian'),
 (5, 'FAI', 'Fakultas Agama Islam'),
 (6, 'FT', 'Fakultas Teknik'),
 (7, 'FH', 'Fakultas Hukum'),
-(8, 'PS', 'Program Pasca Sarjana'),
-(9, 'tes', 'tes');
+(8, 'PS', 'Program Pasca Sarjana');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_golongan`
+-- Table structure for table `relasi_golongan`
 --
 
 CREATE TABLE `relasi_golongan` (
@@ -192,7 +199,7 @@ CREATE TABLE `relasi_golongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_golongan`
+-- Dumping data for table `relasi_golongan`
 --
 
 INSERT INTO `relasi_golongan` (`id_gol`, `nama_gol`) VALUES
@@ -209,7 +216,7 @@ INSERT INTO `relasi_golongan` (`id_gol`, `nama_gol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_jabatan`
+-- Table structure for table `relasi_jabatan`
 --
 
 CREATE TABLE `relasi_jabatan` (
@@ -218,7 +225,7 @@ CREATE TABLE `relasi_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_jabatan`
+-- Dumping data for table `relasi_jabatan`
 --
 
 INSERT INTO `relasi_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
@@ -237,7 +244,7 @@ INSERT INTO `relasi_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_jab_fung`
+-- Table structure for table `relasi_jab_fung`
 --
 
 CREATE TABLE `relasi_jab_fung` (
@@ -246,7 +253,7 @@ CREATE TABLE `relasi_jab_fung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_jab_fung`
+-- Dumping data for table `relasi_jab_fung`
 --
 
 INSERT INTO `relasi_jab_fung` (`id_jabfung`, `nama_jabfung`) VALUES
@@ -258,7 +265,7 @@ INSERT INTO `relasi_jab_fung` (`id_jabfung`, `nama_jabfung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_jenis_dosen`
+-- Table structure for table `relasi_jenis_dosen`
 --
 
 CREATE TABLE `relasi_jenis_dosen` (
@@ -267,7 +274,7 @@ CREATE TABLE `relasi_jenis_dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_jenis_dosen`
+-- Dumping data for table `relasi_jenis_dosen`
 --
 
 INSERT INTO `relasi_jenis_dosen` (`id_jenis`, `nama_jenis`) VALUES
@@ -279,7 +286,7 @@ INSERT INTO `relasi_jenis_dosen` (`id_jenis`, `nama_jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `relasi_prodi`
+-- Table structure for table `relasi_prodi`
 --
 
 CREATE TABLE `relasi_prodi` (
@@ -289,7 +296,7 @@ CREATE TABLE `relasi_prodi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `relasi_prodi`
+-- Dumping data for table `relasi_prodi`
 --
 
 INSERT INTO `relasi_prodi` (`id_prodi`, `id_fakultas`, `nama_prodi`) VALUES
@@ -314,13 +321,12 @@ INSERT INTO `relasi_prodi` (`id_prodi`, `id_fakultas`, `nama_prodi`) VALUES
 (19, 6, 'Teknik Mesin'),
 (20, 6, 'Teknik Industri'),
 (21, 7, 'Ilmu Hukum'),
-(22, 8, 'Ilmu Administrasi'),
-(23, 8, 'Manajemen Pendidikan Islam');
+(22, 8, 'Ilmu Administrasi');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `settingsmt`
+-- Table structure for table `settingsmt`
 --
 
 CREATE TABLE `settingsmt` (
@@ -332,7 +338,7 @@ CREATE TABLE `settingsmt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `settingsmt`
+-- Dumping data for table `settingsmt`
 --
 
 INSERT INTO `settingsmt` (`id_set`, `nidn`, `semester`, `tahun_akademik`, `validasi`) VALUES
@@ -341,12 +347,27 @@ INSERT INTO `settingsmt` (`id_set`, `nidn`, `semester`, `tahun_akademik`, `valid
 (67, '0415028704', 'Genap', '2017/2018', 'Approved'),
 (70, '0424108402', 'Gasal', '2017/2018', 'Approved'),
 (72, '0424108402', 'Genap', '2017/2018', 'Approved'),
-(73, '0431078803', 'Genap', '2018/2019', 'Approved');
+(73, '0431078803', 'Genap', '2018/2019', 'Approved'),
+(75, '9090', 'GENAP', '2017/2018', 'Approved');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Stand-in structure for view `setting_smt`
+-- (See below for the actual view)
+--
+CREATE TABLE `setting_smt` (
+`id_set` int(11)
+,`nidn` varchar(20)
+,`semester` varchar(20)
+,`tahun_akademik` varchar(20)
+,`validasi` enum('Approved','Not Approved')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -361,23 +382,114 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nidn`, `password`, `nama_user`, `level`, `status`, `jk`, `id_jabatan`) VALUES
-(6, '0415028704', '0192023a7bbd73250516f069df18b500', 'Ade Bastian, S.T., M.Kom', 'Dosen', 'Aktif', 'Laki-laki', 9),
-(8, '0423107903', '827ccb0eea8a706c4c34a16891f84e7b', 'Budiman, S.Si., M.Kom.', 'Dosen', 'Aktif', 'Laki-laki', 0),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'M. Iqbal Assegaf', 'Admin', 'Aktif', 'Laki-laki', 0),
 (5, '0424108402', '0192023a7bbd73250516f069df18b500', 'Deffy Susanti, ST., M.Kom', 'Dosen', 'Aktif', 'Perempuan', 0),
+(6, '0415028704', '0192023a7bbd73250516f069df18b500', 'Ade Bastian, S.T., M.Kom', 'Dosen', 'Aktif', 'Laki-laki', 9),
 (7, '0429098701', '0192023a7bbd73250516f069df18b500', 'Sandi Fajar Rodiansyah, S.Pd., M.Cs.', 'Dosen', 'Aktif', 'Laki-laki', 0),
-(9, '0431078803', '827ccb0eea8a706c4c34a16891f84e7b', 'Ardi Mardiana, S.T., M.Kom', 'Dosen', 'Aktif', 'Laki-laki', 0),
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'M. Iqbal Assegaf', 'Admin', 'Aktif', 'Laki-laki', 0);
+(8, '0423107903', '827ccb0eea8a706c4c34a16891f84e7b', 'Budiman, S.Si., M.Kom.', 'Dosen', 'Aktif', 'Laki-laki', 0),
+(9, '0431078803', '827ccb0eea8a706c4c34a16891f84e7b', 'Ardi Mardiana, S.T., M.Kom', 'Dosen', 'Aktif', 'Laki-laki', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_dosen`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_dosen` (
+`id_dosen` int(11)
+,`nip` varchar(20)
+,`nidn` varchar(20)
+,`nosertifikat` varchar(20)
+,`nama_dosen` varchar(100)
+,`id_prodi` int(11)
+,`tlp` varchar(15)
+,`email` varchar(50)
+,`jk` enum('Laki-laki','Perempuan')
+,`id_fakultas` int(11)
+,`id_jabfung` int(11)
+,`id_gol` int(11)
+,`tanggal_lahir` date
+,`tempat_lahir` varchar(30)
+,`s1` varchar(50)
+,`s2` varchar(50)
+,`s3` varchar(50)
+,`id_jenis` int(11)
+,`id_jabatan` int(11)
+,`bidangilmu` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_isi`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_isi` (
+`kode_kegiatan` int(11)
+,`nidn` varchar(20)
+,`semester` varchar(10)
+,`id_isi` int(11)
+,`tahun_akademik` varchar(20)
+,`jenis_kegiatan` int(11)
+,`deskripsi_kegiatan` text
+,`bukti_penugasan` varchar(100)
+,`sks` int(11)
+,`jml_mhs` varchar(11)
+,`jml_dosen` int(11)
+,`masa_penugasan` varchar(50)
+,`bukti_dokumen` varchar(50)
+,`sks_kinerja` float
+,`rekomendasi` varchar(20)
+,`file_bukti_penugasan` varchar(100)
+,`file_bukti_dokumen` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `prodi`
+--
+DROP TABLE IF EXISTS `prodi`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `prodi`  AS  select `a`.`id_prodi` AS `id_prodi`,`b`.`id_fakultas` AS `id_fakultas`,`a`.`nama_prodi` AS `nama_prodi` from (`relasi_prodi` `a` join `relasi_fakultas` `b` on((`a`.`id_fakultas` = `b`.`id_fakultas`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `setting_smt`
+--
+DROP TABLE IF EXISTS `setting_smt`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `setting_smt`  AS  select `a`.`id_set` AS `id_set`,`b`.`nidn` AS `nidn`,`a`.`semester` AS `semester`,`a`.`tahun_akademik` AS `tahun_akademik`,`a`.`validasi` AS `validasi` from (`settingsmt` `a` left join `dosen` `b` on((`a`.`nidn` = `b`.`nidn`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_dosen`
+--
+DROP TABLE IF EXISTS `view_dosen`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_dosen`  AS  select `a`.`id_dosen` AS `id_dosen`,`a`.`nip` AS `nip`,`a`.`nidn` AS `nidn`,`a`.`nosertifikat` AS `nosertifikat`,`a`.`nama_dosen` AS `nama_dosen`,`b`.`id_prodi` AS `id_prodi`,`a`.`tlp` AS `tlp`,`a`.`email` AS `email`,`a`.`jk` AS `jk`,`c`.`id_fakultas` AS `id_fakultas`,`d`.`id_jabfung` AS `id_jabfung`,`e`.`id_gol` AS `id_gol`,`a`.`tanggal_lahir` AS `tanggal_lahir`,`a`.`tempat_lahir` AS `tempat_lahir`,`a`.`s1` AS `s1`,`a`.`s2` AS `s2`,`a`.`s3` AS `s3`,`f`.`id_jenis` AS `id_jenis`,`g`.`id_jabatan` AS `id_jabatan`,`a`.`bidangilmu` AS `bidangilmu` from ((((((`dosen` `a` left join `relasi_prodi` `b` on((`a`.`id_prodi` = `b`.`id_prodi`))) left join `relasi_fakultas` `c` on((`a`.`id_fakultas` = `c`.`id_fakultas`))) left join `relasi_jab_fung` `d` on((`a`.`id_jabfung` = `d`.`id_jabfung`))) left join `relasi_golongan` `e` on((`a`.`id_gol` = `e`.`id_gol`))) left join `relasi_jenis_dosen` `f` on((`a`.`id_jenis` = `f`.`id_jenis`))) left join `relasi_jabatan` `g` on((`a`.`id_jabatan` = `g`.`id_jabatan`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_isi`
+--
+DROP TABLE IF EXISTS `view_isi`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_isi`  AS  select `b`.`kode_kegiatan` AS `kode_kegiatan`,`c`.`nidn` AS `nidn`,`a`.`semester` AS `semester`,`a`.`id_isi` AS `id_isi`,`a`.`tahun_akademik` AS `tahun_akademik`,`a`.`jenis_kegiatan` AS `jenis_kegiatan`,`a`.`deskripsi_kegiatan` AS `deskripsi_kegiatan`,`a`.`bukti_penugasan` AS `bukti_penugasan`,`a`.`sks` AS `sks`,`a`.`jml_mhs` AS `jml_mhs`,`a`.`jml_dosen` AS `jml_dosen`,`a`.`masa_penugasan` AS `masa_penugasan`,`a`.`bukti_dokumen` AS `bukti_dokumen`,`a`.`sks_kinerja` AS `sks_kinerja`,`a`.`rekomendasi` AS `rekomendasi`,`a`.`file_bukti_penugasan` AS `file_bukti_penugasan`,`a`.`file_bukti_dokumen` AS `file_bukti_dokumen` from ((`isi_bkd` `a` left join `kegiatan` `b` on((`a`.`kode_kegiatan` = `b`.`kode_kegiatan`))) left join `dosen` `c` on((`a`.`nidn` = `c`.`nidn`))) ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`),
@@ -390,7 +502,7 @@ ALTER TABLE `dosen`
   ADD KEY `jabatan` (`id_jabatan`);
 
 --
--- Indeks untuk tabel `isi_bkd`
+-- Indexes for table `isi_bkd`
 --
 ALTER TABLE `isi_bkd`
   ADD PRIMARY KEY (`id_isi`),
@@ -398,97 +510,97 @@ ALTER TABLE `isi_bkd`
   ADD KEY `nidn` (`nidn`);
 
 --
--- Indeks untuk tabel `kegiatan`
+-- Indexes for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
   ADD PRIMARY KEY (`kode_kegiatan`);
 
 --
--- Indeks untuk tabel `relasi_fakultas`
+-- Indexes for table `relasi_fakultas`
 --
 ALTER TABLE `relasi_fakultas`
   ADD PRIMARY KEY (`id_fakultas`);
 
 --
--- Indeks untuk tabel `relasi_golongan`
+-- Indexes for table `relasi_golongan`
 --
 ALTER TABLE `relasi_golongan`
   ADD PRIMARY KEY (`id_gol`);
 
 --
--- Indeks untuk tabel `relasi_jabatan`
+-- Indexes for table `relasi_jabatan`
 --
 ALTER TABLE `relasi_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indeks untuk tabel `relasi_jab_fung`
+-- Indexes for table `relasi_jab_fung`
 --
 ALTER TABLE `relasi_jab_fung`
   ADD PRIMARY KEY (`id_jabfung`);
 
 --
--- Indeks untuk tabel `relasi_jenis_dosen`
+-- Indexes for table `relasi_jenis_dosen`
 --
 ALTER TABLE `relasi_jenis_dosen`
   ADD PRIMARY KEY (`id_jenis`);
 
 --
--- Indeks untuk tabel `relasi_prodi`
+-- Indexes for table `relasi_prodi`
 --
 ALTER TABLE `relasi_prodi`
   ADD PRIMARY KEY (`id_prodi`),
   ADD KEY `id_fakultas` (`id_fakultas`);
 
 --
--- Indeks untuk tabel `settingsmt`
+-- Indexes for table `settingsmt`
 --
 ALTER TABLE `settingsmt`
   ADD PRIMARY KEY (`id_set`),
   ADD KEY `nidn` (`nidn`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`nidn`),
-  ADD UNIQUE KEY `id_user` (`id_user`),
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `nidn` (`nidn`),
   ADD KEY `jabatan` (`id_jabatan`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `dosen`
+-- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
   MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `isi_bkd`
+-- AUTO_INCREMENT for table `isi_bkd`
 --
 ALTER TABLE `isi_bkd`
-  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT untuk tabel `settingsmt`
+-- AUTO_INCREMENT for table `settingsmt`
 --
 ALTER TABLE `settingsmt`
-  MODIFY `id_set` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_set` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `dosen`
+-- Constraints for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD CONSTRAINT `dosen_ibfk_2` FOREIGN KEY (`id_prodi`) REFERENCES `relasi_prodi` (`id_prodi`),
@@ -499,26 +611,26 @@ ALTER TABLE `dosen`
   ADD CONSTRAINT `dosen_ibfk_7` FOREIGN KEY (`id_gol`) REFERENCES `relasi_golongan` (`id_gol`);
 
 --
--- Ketidakleluasaan untuk tabel `isi_bkd`
+-- Constraints for table `isi_bkd`
 --
 ALTER TABLE `isi_bkd`
   ADD CONSTRAINT `isi_bkd_ibfk_1` FOREIGN KEY (`kode_kegiatan`) REFERENCES `kegiatan` (`kode_kegiatan`),
   ADD CONSTRAINT `isi_bkd_ibfk_2` FOREIGN KEY (`nidn`) REFERENCES `dosen` (`nidn`);
 
 --
--- Ketidakleluasaan untuk tabel `relasi_prodi`
+-- Constraints for table `relasi_prodi`
 --
 ALTER TABLE `relasi_prodi`
   ADD CONSTRAINT `relasi_prodi_ibfk_1` FOREIGN KEY (`id_fakultas`) REFERENCES `relasi_fakultas` (`id_fakultas`);
 
 --
--- Ketidakleluasaan untuk tabel `settingsmt`
+-- Constraints for table `settingsmt`
 --
 ALTER TABLE `settingsmt`
   ADD CONSTRAINT `settingsmt_ibfk_1` FOREIGN KEY (`nidn`) REFERENCES `dosen` (`nidn`);
 
 --
--- Ketidakleluasaan untuk tabel `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `relasi_jabatan` (`id_jabatan`);
