@@ -7,3 +7,6 @@ Isi Folder :
 - SBDL
   - Tugas_Besar
     - admin
+    
+- Teknik Kompilasi
+  - Tugas
